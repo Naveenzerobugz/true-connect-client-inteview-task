@@ -16,13 +16,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// app.use(express.json({ limit: '50mb' }));
-// app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 app.use(bodyParser.json({ limit: '10mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
-app.use("/public", express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, "/build")));
+app.use(express.static("public/build"));
+
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/public/build/index.html"));
+});
 // parse application/json
 app.use(bodyParser.json())
 app.post('/login', function(req, res) {
