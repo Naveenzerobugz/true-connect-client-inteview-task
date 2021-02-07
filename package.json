@@ -1,0 +1,27 @@
+{
+    "name": "interview-assignment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "Naveenkumar",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cookie-parser": "^1.4.5",
+        "crypto": "^1.0.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.9.0",
+        "http-errors": "^1.8.0",
+        "jsonwebtoken": "^8.5.1",
+        "method-override": "^3.0.0",
+        "mongoose": "^5.11.9",
+        "multer": "^1.4.2",
+        "multer-gridfs-storage": "^4.2.0",
+        "path": "^0.12.7"
+    }
+}
