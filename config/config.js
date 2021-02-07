@@ -19,6 +19,8 @@ mongoose.connect(url, {
 const connect = mongoose.createConnection(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
 })
 let gfs;
 connect.once('open', () => {

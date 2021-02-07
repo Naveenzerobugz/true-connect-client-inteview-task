@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "/build")));
 app.use(express.static("public/build"));
 
 // Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/build/index.html"));
 });
 // parse application/json

@@ -13,7 +13,10 @@ const productdetail = require("../controllers").productdetail;
 
 const storage = new GridFsStorage({
     url: process.env.MONGO_DB_CONNECTION,
-    options: { useUnifiedTopology: true },
+    options: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    },
     file: (req, file) => {
         return new Promise((resolve, reject) => {
             crypto.randomBytes(16, (err, buf) => {
